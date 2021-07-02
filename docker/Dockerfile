@@ -1,6 +1,6 @@
 FROM node:lts-alpine
 LABEL maintainer="blacktitty"
-ARG QL_URL=https://github.com/blacktitty-y/qinglong-2.2.1.git
+ARG QL_URL=https://github.com/blacktitty-y/ql-2.2.1.git
 ARG QL_BRANCH=v2.2.1
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
     LANG=zh_CN.UTF-8 \
