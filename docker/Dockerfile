@@ -1,7 +1,7 @@
 FROM node:lts-alpine
-LABEL maintainer="blacktitty"
-ARG QL_URL=https://github.com/blacktitty-y/ql-2.2.1.git
-ARG QL_BRANCH=v2.2.1
+LABEL maintainer="blacktitty-y"
+ARG QL_URL=https://github.com/blacktitty-y/ql-2.2.git
+ARG QL_BRANCH=master
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
     LANG=zh_CN.UTF-8 \
     SHELL=/bin/bash \
@@ -29,10 +29,10 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     && echo "Asia/Shanghai" > /etc/timezone \
     && touch ~/.bashrc \
     && mkdir /run/nginx \
-    && git clone -b ${QL_BRANCH} https://github.com/whyour/qinglong-static.git /static \
+    && git clone -b ${QL_BRANCH} https://github.com/blacktitty-y/ql-static-2.2.git /static \
     && git clone -b ${QL_BRANCH} ${QL_URL} ${QL_DIR} \
-    && git config --global user.email "blacktitty@@users.noreply.github.com" \
-    && git config --global user.name "blacktitty" \
+    && git config --global user.email "52312781+blacktitty-y@users.noreply.github.com" \
+    && git config --global user.name "Blacktitty" \
     && git config --global pull.rebase true \
     && cd ${QL_DIR} \
     && cp -rf /static/* ./ \
